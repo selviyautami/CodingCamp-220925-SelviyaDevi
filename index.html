@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fashionista - Company Profile</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Login Overlay -->
+  <div id="login-overlay">
+    <div class="login-box">
+      <h2>Welcome</h2>
+      <p>Enter your name to continue</p>
+      <input type="text" id="username" placeholder="Your name">
+      <button id="login-btn">Enter</button>
+      <p id="login-error" class="error"></p>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+<nav class="navbar">
+  <div class="logo-container">
+    <img src="https://www.clipartmax.com/png/middle/138-1388636_fashion-logo.png" alt="Logo Fashion" class="logo">
+    <span class="brand">Fashionista</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="#profile"><i class="fas fa-user"></i> Our Profile</a></li>
+    <li><a href="#products"><i class="fas fa-tshirt"></i> Products</a></li>
+    <li><a href="#team"><i class="fas fa-users"></i> Team</a></li>
+    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+  </ul>
+</nav>
+
+  <!-- Home -->
+  <section id="home" class="hero">
+    <h1 id="welcome-text">Welcome to Fashionista</h1>
+    <p>Trendy. Stylish. Comfortable.</p>
+  </section>
+
+  <!-- Profile -->
+  <section id="profile" class="section">
+    <h2>Our Profile</h2>
+    <p>Fashionista is a modern fashion brand focusing on trendy, comfortable, and affordable styles. Our mission is to make fashion accessible for everyone.</p>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="section">
+    <h2>Our Products</h2>
+    <div class="products-container">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x200" alt="T-Shirt">
+        <h3>Casual T-Shirt</h3>
+        <p>$20</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x200" alt="Jacket">
+        <h3>Denim Jacket</h3>
+        <p>$45</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x200" alt="Sneakers">
+        <h3>White Sneakers</h3>
+        <p>$60</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team" class="section">
+    <h2>Meet Our Designers</h2>
+    <div class="team-container">
+      <div class="team-card">
+        <img src="https://via.placeholder.com/200x200" alt="Designer 1">
+        <h3>Amanda Lee</h3>
+        <p>Creative Director</p>
+      </div>
+      <div class="team-card">
+        <img src="https://via.placeholder.com/200x200" alt="Designer 2">
+        <h3>Kevin Park</h3>
+        <p>Fashion Designer</p>
+      </div>
+      <div class="team-card">
+        <img src="https://via.placeholder.com/200x200" alt="Designer 3">
+        <h3>Sophia Tan</h3>
+        <p>Stylist</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <div class="contact-wrapper">
+      <form id="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name">
+
+        <label for="email">Email</label>
+        <input type="email" id="email">
+
+        <label for="phone">Phone</label>
+        <input type="text" id="phone">
+
+        <label for="message">Message</label>
+        <textarea id="message"></textarea>
+
+        <button type="submit">Submit</button>
+        <p id="form-error" class="error"></p>
+      </form>
+
+      <div id="form-result"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Fashionista. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
