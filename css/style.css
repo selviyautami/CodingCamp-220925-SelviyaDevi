@@ -98,10 +98,12 @@ body {
               center/cover no-repeat;
   color: white; /* teks jadi putih */
   text-align: center;
-  padding: 120px 20px;
+  padding: 180px 20px 60px; /* atas 180px, kanan-kiri 20px, bawah 60px */
   height: 80vh;
   transition: background-image 1s ease-in-out;
   overflow: hidden;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 .hero::before {
@@ -112,6 +114,11 @@ body {
   background: rgba(0, 0, 0, 0.4); /* overlay gelap transparan */
   z-index: 1;
 }
+
+#home {
+  padding-top: 100px; /* sesuaikan sama tinggi navbar */
+}
+
 
 .hero h1,
 .hero p {
@@ -139,7 +146,7 @@ body {
   text-align: center;
   position: relative;
   top: -70px;  /* tinggi navbar */
-  padding-top: 70px; /* sama dengan navbar */
+  padding-top: 100px; /* sama dengan navbar */
 }
 
 .section, .hero {
@@ -184,7 +191,7 @@ body {
 
 .product-card {
   background: #fff;
-  padding: 15px;
+  padding-top: 15px;
   border-radius: 10px;
   width: 200px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -192,6 +199,13 @@ body {
   min-width: 220px; /* sesuaikan ukuran produk */
   margin-right: 20px;
 }
+
+
+#products {
+  scroll-margin-top: 100px;
+}
+
+
 
 /* team */
 .team-container {
@@ -260,3 +274,24 @@ footer {
   text-align: center;
   margin-top: 20px;
 }
+
+.visi-misi {
+  margin-top: 30px;
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.visi-misi h3 {
+  margin-top: 20px;
+  color: #333;
+}
+
+.visi-misi ul {
+  margin-top: 10px;
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+
