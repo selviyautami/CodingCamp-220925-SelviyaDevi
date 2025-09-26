@@ -10,9 +10,45 @@ loginBtn.addEventListener("click", () => {
     loginError.textContent = "Please enter your name!";
   } else {
     loginOverlay.style.display = "none";
-    welcomeText.textContent = `Welcome, ${usernameInput.value.trim()}!`;
+    welcomeText.textContent = `WELCOME, ${usernameInput.value.trim()}!`;
   }
 });
+
+// Inisialisasi Swiper
+const swiper = new Swiper('.swiper', {
+  slidesPerView: 2,
+  spaceBetween: 30,
+  loop: true,
+  autoplay: {
+    delay: 3500,
+    disableOnInteraction: false,
+  },
+   navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    1024: { slidesPerView: 3, delay: 4000 },
+    768: { slidesPerView: 2, delay: 3500 },
+    480: { slidesPerView: 1, delay: 3000,  spaceBetween: 20 }
+  }
+});
+
+const hero = document.querySelector('.hero');
+const images = [
+  "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=1920&q=80",
+  "https://images.unsplash.com/photo-1731341869905-5ef9bcd272f1?auto=format&fit=crop&w=1920&q=80",
+  "https://images.unsplash.com/photo-1600054904350-1d493ae5f922?auto=format&fit=crop&w=1920&q=80"
+];
+
+
+let i = 0;
+
+setInterval(() => {
+  hero.style.backgroundImage = `url(${images[i]})`;
+  i = (i + 1) % images.length;
+}, 5000);
+
 
 // contact form
 const form = document.getElementById("contact-form");

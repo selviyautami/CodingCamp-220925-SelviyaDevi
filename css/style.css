@@ -76,12 +76,15 @@ body {
   list-style: none;
   display: flex;
   gap: 20px;
+  padding: 0;
+   flex-wrap: wrap; /* biar baris berikut muncul di bawah kalau penuh */
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
   transition: 0.3s;
+  white-space: nowrap; /* jangan pecah kata */
 }
 
 .nav-links a:hover {
@@ -90,28 +93,93 @@ body {
 
 /* hero */
 .hero {
-  background: url('https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
-  color: white;
+  position: relative; /* penting untuk overlay */
+  background: url('https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') 
+              center/cover no-repeat;
+  color: white; /* teks jadi putih */
   text-align: center;
   padding: 120px 20px;
+  height: 80vh;
+  transition: background-image 1s ease-in-out;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* overlay gelap transparan */
+  z-index: 1;
+}
+
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 2; /* supaya muncul di atas overlay */
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.6); /* biar makin jelas */
 }
 
 .hero h1 {
-  font-size: 3em;
+  font-size: 2em;
 }
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 15px;
+    height: 60vh;
+  }
+}
+
+
 
 /* section */
 .section {
   padding: 60px 20px;
   text-align: center;
+  position: relative;
+  top: -70px;  /* tinggi navbar */
+  padding-top: 70px; /* sama dengan navbar */
+}
+
+.section, .hero {
+  scroll-margin-top: 80px; /* sesuaikan tinggi navbar */
 }
 
 /* products */
 .products-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  width: 100%;
+  padding: 20px 0;
+}
+
+/* Tombol Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #333;
+}
+
+.swiper-slide.product-card {
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.swiper-slide.product-card img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.swiper-slide.product-card h3 {
+  margin: 10px 0 5px;
+}
+
+.swiper-slide.product-card p {
+  color: #555;
 }
 
 .product-card {
@@ -121,6 +189,8 @@ body {
   width: 200px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   text-align: center;
+  min-width: 220px; /* sesuaikan ukuran produk */
+  margin-right: 20px;
 }
 
 /* team */
@@ -138,11 +208,19 @@ body {
   width: 200px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* animasi smooth */
+}
+
+.team-card:hover {
+  transform: translateY(-10px); /* card naik 10px */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* shadow lebih tegas */
 }
 
 .team-card img {
-  width: 100%;
-  border-radius: 50%;
+   width: 100%;       /* full lebar card */
+  height: 250px;     /* tinggi tetap supaya rata semua */
+  object-fit: cover; /* memotong gambar agar sesuai card */
+  border-radius: 50%; /* tetap bulat */
 }
 
 /* contact */
